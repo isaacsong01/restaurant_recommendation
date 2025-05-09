@@ -1,0 +1,67 @@
+Restaurant Recommendation Service: Project Requirements Document
+
+1. Project Overview
+This project aims to develop a recommendation service that leverages the Yelp Fusion API to extract restaurant data and integrates with Claude AI to provide personalized restaurant recommendations based on user-specified criteria.
+
+2. Objectives
+* Create a system that retrieves relevant restaurant data from the Yelp Fusion API
+* Process and structure this data for input into Claude AI
+* Develop a mechanism for Claude AI to analyze the data and generate personalized recommendations
+* Deliver recommendations based on user-specified criteria including price and rating
+
+3. Technical Requirements
+3.1 Data Source
+* Yelp Fusion API: Will be used to extract restaurant data including: 
+o Restaurant name, location, and contact information
+o Price range ($ to $$$$)
+o User ratings (1-5 stars)
+o Photos
+o Reviews
+o Categories/cuisine types
+o Operating hours
+
+3.2 Integration
+* API integration between Yelp Fusion and the application
+* Data formatting for Claude AI processing
+* Claude AI integration for recommendation generation
+
+3.3 Functionality
+* User input collection for criteria specification
+* Query formation for Yelp API
+* Data processing and structuring
+* Recommendation generation via Claude AI
+* Results presentation to user
+
+4. User Requirements
+4.1 Input Criteria
+The system will accept the following criteria from users:
+* Price range preferences
+* Minimum rating threshold
+
+4.2 Additional Criteria (To be confirmed)
+These were mentioned as examples but not specifically confirmed:
+* Keywords (e.g., "romantic," "outdoor seating")
+* Categories/cuisine type
+* Distance/location
+* Dietary restrictions
+* Operating hours
+
+5. System Architecture
+[Basic architecture diagram would be inserted here]
+1. User Interface: Collects user preferences
+2. API Controller: Forms and sends queries to Yelp API
+3. Data Processor: Formats returned data for Claude AI
+4. Recommendation Engine: Claude AI processes data and generates recommendations
+5. Results Interface: Presents recommendations to user
+6. Information Gaps and Questions
+1. User Interface: What type of interface will users interact with? (Web application, mobile app, chatbot, etc.)
+2. Authentication: How will the system handle Yelp API authentication and rate limits?
+3. Location: How will user location be determined for distance-based recommendations?
+4. Criteria Priority: How should the system weight different criteria when generating recommendations?
+5. Result Format: What information should be included in the recommendations? (Just names, detailed information, links, etc.)
+6. Deployment: Where will this service be hosted?
+7. User Accounts: Will the system store user preferences or history?
+8. Additional Criteria: Are there other criteria beyond price and rating that should be included?
+9. Performance Requirements: What are the expectations for response time?
+10. Scale: How many users is this system expected to serve?
+
