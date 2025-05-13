@@ -46,7 +46,7 @@ class YelpToSupabase:
     
     def insert_restaurant(self, restaurant: Dict[str, Any]) -> bool:
         """
-        Insert a restaurant into the raw.restaurants table
+        Insert a restaurant into the public.restaurants table
         
         Args:
             restaurant: Dictionary with restaurant data
@@ -70,8 +70,8 @@ class YelpToSupabase:
                 "highlights": json.dumps(restaurant.get("highlights", []))
             }
             
-            # Insert restaurant data into raw.restaurants
-            result = self.supabase.postgrest.schema("raw").table("restaurants").upsert(
+            # Insert restaurant data into public.restaurants
+            result = self.supabase.postgrest.schema("public").table("restaurants").upsert(
                 restaurant_data, 
                 on_conflict="place_id"
             ).execute()
@@ -84,7 +84,7 @@ class YelpToSupabase:
     
     def insert_reviews(self, place_id: str, reviews: List[Dict[str, Any]]) -> bool:
         """
-        Insert reviews for a restaurant into the raw.reviews table
+        Insert reviews for a restaurant into the public.reviews table
         
         Args:
             place_id: Restaurant place_id
@@ -116,8 +116,8 @@ class YelpToSupabase:
                     "feedback": json.dumps(review.get("feedback", {}))
                 }
                 
-                # Insert review data into raw.reviews
-                self.supabase.postgrest.schema("raw").table("reviews").insert(review_data).execute()
+                # Insert review data into public.reviews
+                self.supabase.postgrest.schema("public").table("reviews").insert(review_data).execute()
             
             logger.info(f"Inserted {len(reviews)} reviews for place_id: {place_id}")
             return True
@@ -127,7 +127,7 @@ class YelpToSupabase:
     
     def insert_restaurant_details(self, place_id: str, details: Dict[str, Any]) -> bool:
         """
-        Insert restaurant details into the raw.restaurant_details table
+        Insert restaurant details into the public.restaurant_details table
         
         Args:
             place_id: Restaurant place_id
@@ -152,8 +152,8 @@ class YelpToSupabase:
                 "health_score": details.get("health_score", 0)
             }
             
-            # Insert details data into raw.restaurant_details
-            result = self.supabase.postgrest.schema("raw").table("restaurant_details").upsert(
+            # Insert details data into public.restaurant_details
+            result = self.supabase.postgrest.schema("public").table("restaurant_details").upsert(
                 details_data, 
                 on_conflict="place_id"
             ).execute()
@@ -166,7 +166,7 @@ class YelpToSupabase:
     
     def load_json_to_supabase(self, json_file_path: str) -> bool:
         """
-        Load Yelp data from JSON file into Supabase RAW schema
+        Load Yelp data from JSON file into Supabase PUBLIC schema
         
         Args:
             json_file_path: Path to JSON file
@@ -211,9 +211,9 @@ def main():
     
     result = loader.load_json_to_supabase(json_file_path)
     if result:
-        logger.info("Data successfully loaded to Supabase RAW schema")
+        logger.info("Data successfully loaded to Supabase PUBLIC schema")
     else:
-        logger.error("Failed to load data to Supabase RAW schema")
+        logger.error("Failed to load data to Supabase PUBLIC schema")
 
 if __name__ == "__main__":
     main()
