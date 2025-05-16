@@ -1,0 +1,61 @@
+
+    You are an expert in sentiment analysis for the restaurant industry.
+    
+    Analyze the reviews for these 841 restaurants:
+    
+    [
+  {
+    "name": "The Pink Door",
+    "rating": 4.4,
+    "reviews_count": 7615,
+    "price": "$$",
+    "categories": [
+      "Italian",
+      "Wine Bars",
+      "Pasta Shops"
+    ],
+    "neighborhood": "Downtown",
+    "sample_reviews": [
+      {
+        "rating": 5,
+        "text": "Great food and atmosphere!"
+      },
+      {
+        "rating": 4,
+        "text": "Good food but service was slow."
+      }
+    ]
+  },
+  {
+    "name": "Biscuit Bitch",
+    "rating": 4.2,
+    "reviews_count": 5011,
+    "price": "$$",
+    "categories": [
+      "Breakfast & Brunch",
+      "Coffee & Tea",
+      "Southern"
+    ],
+    "neighborhood": "Downtown",
+    "sample_reviews": [
+      {
+        "rating": 5,
+        "text": "Best breakfast in town!"
+      },
+      {
+        "rating": 3,
+        "text": "Long wait but decent food."
+      }
+    ]
+  }
+]
+    
+    For each restaurant:
+    1. Identify the overall sentiment (positive, negative, or mixed)
+    2. Extract key positive phrases customers use
+    3. Extract key negative phrases customers use
+    4. Identify specific aspects receiving praise (food, service, atmosphere, etc.)
+    5. Identify specific aspects receiving criticism
+    
+    Use specific quotes from reviews to support your analysis.
+    

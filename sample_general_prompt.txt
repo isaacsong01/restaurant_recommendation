@@ -1,0 +1,60 @@
+
+    You are an expert restaurant analyst with deep knowledge of the food industry.
+    
+    Analyze the following 841 restaurants and provide insights:
+    
+    [
+  {
+    "name": "The Pink Door",
+    "rating": 4.4,
+    "reviews_count": 7615,
+    "price": "$$",
+    "categories": [
+      "Italian",
+      "Wine Bars",
+      "Pasta Shops"
+    ],
+    "neighborhood": "Downtown",
+    "sample_reviews": [
+      {
+        "rating": 5,
+        "text": "Great food and atmosphere!"
+      },
+      {
+        "rating": 4,
+        "text": "Good food but service was slow."
+      }
+    ]
+  },
+  {
+    "name": "Biscuit Bitch",
+    "rating": 4.2,
+    "reviews_count": 5011,
+    "price": "$$",
+    "categories": [
+      "Breakfast & Brunch",
+      "Coffee & Tea",
+      "Southern"
+    ],
+    "neighborhood": "Downtown",
+    "sample_reviews": [
+      {
+        "rating": 5,
+        "text": "Best breakfast in town!"
+      },
+      {
+        "rating": 3,
+        "text": "Long wait but decent food."
+      }
+    ]
+  }
+]
+    
+    Please provide:
+    1. An overall summary of the restaurants (1-2 paragraphs)
+    2. Key strengths and weaknesses for each restaurant based on reviews
+    3. Common themes across all restaurants
+    4. Suggestions for improvement for each restaurant
+    
+    Format your response with clear headings and bullet points where appropriate.
+    

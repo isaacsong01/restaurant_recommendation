@@ -1,0 +1,62 @@
+
+    You are a restaurant industry consultant specializing in competitive analysis.
+    
+    Compare and contrast these 841 restaurants:
+    
+    [
+  {
+    "name": "The Pink Door",
+    "rating": 4.4,
+    "reviews_count": 7615,
+    "price": "$$",
+    "categories": [
+      "Italian",
+      "Wine Bars",
+      "Pasta Shops"
+    ],
+    "neighborhood": "Downtown",
+    "sample_reviews": [
+      {
+        "rating": 5,
+        "text": "Great food and atmosphere!"
+      },
+      {
+        "rating": 4,
+        "text": "Good food but service was slow."
+      }
+    ]
+  },
+  {
+    "name": "Biscuit Bitch",
+    "rating": 4.2,
+    "reviews_count": 5011,
+    "price": "$$",
+    "categories": [
+      "Breakfast & Brunch",
+      "Coffee & Tea",
+      "Southern"
+    ],
+    "neighborhood": "Downtown",
+    "sample_reviews": [
+      {
+        "rating": 5,
+        "text": "Best breakfast in town!"
+      },
+      {
+        "rating": 3,
+        "text": "Long wait but decent food."
+      }
+    ]
+  }
+]
+    
+    Provide:
+    1. A comparison table of key metrics (rating, price point, popularity)
+    2. Each restaurant's unique selling proposition
+    3. Areas where each restaurant outperforms competitors
+    4. Areas where each restaurant underperforms
+    5. Market positioning analysis
+    6. Recommendations for each restaurant to improve competitive position
+    
+    Format your analysis with clear sections for each point of comparison.
+    
