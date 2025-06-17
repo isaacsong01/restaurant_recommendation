@@ -25,10 +25,10 @@ def load_json(json_path):
         # if the data instance is a list, it returns the data as is.
         if isinstance(data, list):
             return data
-        # if the data instance is a dictionary, it reutns the data with the key 'restaurants'.
+        # if the data instance is a dictionary, it returns the data with the key 'restaurants'.
         if isinstance(data, dict) and "restaurants" in data:
             return data['restaurants']
-        # if the data is neither a list or discttionary, it raises a ValueError.
+        # if the data is neither a list or dictionary, it raises a ValueError.
         raise ValueError(f"Unexcpected JSON structure in {json_path}.")
     
     # If there is an error in opening the file, it prints the error message and returns an empty list.
@@ -36,7 +36,7 @@ def load_json(json_path):
         print(f"Error loading JSON file: {e}")
         return []
 
-def preprocess_for_llm(restraunts: List[Dict[str, Any]], max_restaurants: int = 3):
+def preprocess_for_llm(restaurants: List[Dict[str, Any]], max_restaurants: int = 3):
     """ 
     Prepare Yelp restaurant data for LLM analysis by extracting relevant infor and limiting the volume to stay within the token limits.
     
@@ -48,11 +48,11 @@ def preprocess_for_llm(restraunts: List[Dict[str, Any]], max_restaurants: int = 
         List of preprocessed restaurant dictionaries with key information.
     """
     # Limit the number of restaurant to the max_restaurants parameter if needed.
-    restaurant_batch = restraunts[:max_restaurants] if len(restraunts) > max_restaurants else restraunts
+    restaurant_batch = restaurants[:max_restaurants] if len(restaurants) > max_restaurants else restaurants
 
     processed_data = []
     for restaurant in restaurant_batch:
-        # Extract impoortant information from the restaurant data.
+        # Extract important information from the restaurant data.
         processed_restaurant = {
             "name": restaurant.get("name"),
             "rating": restaurant.get("rating"),
@@ -115,7 +115,7 @@ def convert_json_to_dataframe(restaurants: List[Dict[str, Any]]):
         
         flattened_data.append(flat_restaurant)
 
-    return pd.DataFrame(flat_restaurant)
+    return pd.DataFrame(flattened_data)
 
 def filter_restaurants(restaurants: List[Dict[str, Any]],
                        min_rating: float = 0,
@@ -205,7 +205,7 @@ def analyze_reviews_distribution(restaurants: List[Dict[str, Any]]) -> Dict[str,
     """
     Analyze the distribution of reviews across restaurants
     
-    Args:
+    Args:   
         restaurants: List of restaurant data dictionaries
         
     Returns:
@@ -314,7 +314,7 @@ def main_data_processing(json_path: str,
         Processed data ready for LLM analysis
     """
     # Load data
-    restaurants = load_yelp_data_from_json(json_path)
+    restaurants = load_json(json_path)
     
     if not restaurants:
         return {"error": f"No valid data found in {json_path}"}
